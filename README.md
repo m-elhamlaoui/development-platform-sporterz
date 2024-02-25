@@ -86,6 +86,7 @@ SporterZ est une plateforme sociale conçue spécifiquement pour les passionnés
 - Enregistrement des événements et des erreurs (Prometheus, Grafana)
 - Surveillance des performances de la plateforme
 
+---
 ## Maquette 
 ![Figure 2: Acceuil et navigation](https://i.ibb.co/R6bqMR0/HOME.png)
 
