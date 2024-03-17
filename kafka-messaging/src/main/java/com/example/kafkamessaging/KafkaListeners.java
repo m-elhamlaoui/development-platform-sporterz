@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class KafkaListeners {
 
     @KafkaListener(topics = "sporterz", groupId = "groupId")
-    public void listen(Message message) {
-        System.out.println("Received message: " + message.mssg());
+    public void listen(MessageRecord messageRecord) {
+        System.out.println("Received message: " + messageRecord.message());
     }
 }

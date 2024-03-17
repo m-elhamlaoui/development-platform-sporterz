@@ -1,6 +1,6 @@
 package com.example.kafkamessaging.Controller;
 
-import com.example.kafkamessaging.Message;
+import com.example.kafkamessaging.MessageRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +19,7 @@ public class KafkaController {
     }
 
     @PostMapping
-    public void publish(@RequestBody Message message) {
-        kafkaTemplate.send("sporterz", message.mssg());
+    public void publish(@RequestBody MessageRecord messageRecord) {
+        kafkaTemplate.send("sporterz", messageRecord.message());
     }
 }
