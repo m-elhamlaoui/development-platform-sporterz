@@ -1,6 +1,6 @@
-package com.example.Auth.models;
+package com.example.securityservice.models;
 
-import com.example.Auth.enumirations.Role;
+import com.example.securityservice.enumirations.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

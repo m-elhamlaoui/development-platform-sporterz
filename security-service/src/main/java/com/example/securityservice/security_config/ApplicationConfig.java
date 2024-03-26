@@ -1,7 +1,7 @@
-package com.example.Auth.security_config;
+package com.example.securityservice.security_config;
 
 
-import com.example.Auth.repositories.UserRepository;
+import com.example.securityservice.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

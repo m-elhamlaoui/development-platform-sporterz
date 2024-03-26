@@ -1,9 +1,9 @@
-package com.example.Auth.controllers;
+package com.example.securityservice.controllers;
 
-import com.example.Auth.models.AuthenticationRequest;
-import com.example.Auth.models.AuthentificationResponse;
-import com.example.Auth.models.RegisterRequest;
-import com.example.Auth.services.AuthenticationService;
+import com.example.securityservice.models.AuthenticationRequest;
+import com.example.securityservice.models.AuthentificationResponse;
+import com.example.securityservice.models.RegisterRequest;
+import com.example.securityservice.services.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

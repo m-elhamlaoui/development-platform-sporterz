@@ -1,12 +1,12 @@
-package com.example.Auth.services;
+package com.example.securityservice.services;
 
 
-import com.example.Auth.enumirations.Role;
-import com.example.Auth.models.AuthenticationRequest;
-import com.example.Auth.models.AuthentificationResponse;
-import com.example.Auth.models.RegisterRequest;
-import com.example.Auth.models.User;
-import com.example.Auth.repositories.UserRepository;
+import com.example.securityservice.enumirations.Role;
+import com.example.securityservice.models.AuthenticationRequest;
+import com.example.securityservice.models.AuthentificationResponse;
+import com.example.securityservice.models.RegisterRequest;
+import com.example.securityservice.models.User;
+import com.example.securityservice.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

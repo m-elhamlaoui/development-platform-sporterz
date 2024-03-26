@@ -1,7 +1,7 @@
-package com.example.Auth.security_config;
+package com.example.securityservice.security_config;
 
 
-import com.example.Auth.services.JwtService;
+import com.example.securityservice.services.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

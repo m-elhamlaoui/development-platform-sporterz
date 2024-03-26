@@ -1,7 +1,7 @@
-package com.example.Auth.repositories;
+package com.example.securityservice.repositories;
 
 
-import com.example.Auth.models.User;
+import com.example.securityservice.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
