@@ -11,30 +11,36 @@ import java.time.format.DateTimeFormatter;
 
 @Service
 public class FootballApi {
-    @Value("${rapidapi.key}")
-    private static String rapidApiKey;
-
+    private static String apiKey;
+    @Value("${apisports.key}")
+    public void setApiKey(String apiKey) {
+        FootballApi.apiKey = apiKey;
+    }
     private final static String url = "https://v3.football.api-sports.io";
-    private static final String today = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    private static final String yesterday = LocalDate.now().minusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    private static final String tomorrow = LocalDate.now().plusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
     public static JSONObject getBoardMatches(int league) {
         try {
-            String fixtures = WebClient.builder()
+            String data = WebClient.builder()
                     .baseUrl(url)
-                    .defaultHeader("x-rapidapi-host", "v3.football.api-sports.io")
-                    .defaultHeader("x-rapidapi-key", rapidApiKey)
+                    .defaultHeader("x-apisports-key", apiKey)
                     .build()
-                    .post()
-                    .uri("/fixtures")
-                    .body(BodyInserters.fromValue("{\"league\": \"" + league + "\", \"season\": \"2023\", \"date\": \"" + today + "\"}"))
+                    .get()
+                    .uri(uriBuilder -> uriBuilder
+                            .path("/fixtures")
+                            .queryParam("league", league)
+                            .queryParam("season", "2023")
+                            .queryParam("from", yesterday)
+                            .queryParam("to", tomorrow)
+                            .build())
                     .retrieve()
                     .bodyToMono(String.class)
                     .block();
 
-            JSONObject data = new JSONObject(fixtures);
-            return data.getJSONObject("response");
+            return new JSONObject(data);
         } catch (Exception e) {
-            return new JSONObject();
+            return new JSONObject().put("error", e.getMessage());
         }
     }
 

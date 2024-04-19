@@ -7,8 +7,8 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.DateFormat;
-import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 @Service
 public class MatchesBoard {
@@ -19,8 +19,8 @@ public class MatchesBoard {
         this.matchRepository = matchRepository;
     }
 
-    public void insertMatches(JSONObject fetchedMatches) {
-        JSONArray matchesArray = fetchedMatches.getJSONArray("fixtures");
+    public void insertMatches(JSONObject fetchedMatches) throws ParseException {
+        JSONArray matchesArray = fetchedMatches.getJSONArray("response");
 
         for (int i = 0; i < matchesArray.length(); i++) {
             JSONObject matchObject = matchesArray.getJSONObject(i);
@@ -33,18 +33,27 @@ public class MatchesBoard {
             match.setIdMatch(fixtureObject.getInt("id"));
             match.setNameStadium(fixtureObject.getJSONObject("venue").getString("name"));
             match.setCityStadium(fixtureObject.getJSONObject("venue").getString("city"));
-            match.setDatetimeMatch(new Date(fixtureObject.getString("date")));
+            match.setDatetimeMatch(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").parse(fixtureObject.getString("date")));
             match.setStatusMatch(fixtureObject.getJSONObject("status").getString("short"));
             match.setIdLeague(leagueObject.getInt("id"));
             match.setNameLeague(leagueObject.getString("name"));
             match.setIdHomeTeam(homeTeamObject.getInt("id"));
             match.setNameHomeTeam(homeTeamObject.getString("name"));
-            match.setGoalsHomeTeam(matchObject.getJSONObject("goals").getJSONObject("home").optInt("score", 0));
+            try {
+                match.setGoalsHomeTeam(matchObject.getJSONObject("goals").getInt("home"));
+                match.setGoalsAwayTeam(matchObject.getJSONObject("goals").getInt("away"));
+            } catch (Exception e) {
+                match.setGoalsHomeTeam(0);
+                match.setGoalsAwayTeam(0);
+            }
             match.setIdAwayTeam(awayTeamObject.getInt("id"));
             match.setNameAwayTeam(awayTeamObject.getString("name"));
-            match.setGoalsAwayTeam(matchObject.getJSONObject("goals").getJSONObject("away").optInt("score", 0));
 
             matchRepository.save(match);
         }
+    }
+
+    public void deleteMatchesBoard() {
+        matchRepository.deleteAll();
     }
 }
