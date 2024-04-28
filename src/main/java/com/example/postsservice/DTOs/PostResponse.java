@@ -1,6 +1,5 @@
-package com.example.postsservice.Models;
+package com.example.postsservice.DTOs;
 
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,12 +7,11 @@ import lombok.NoArgsConstructor;
 
 import java.util.Base64;
 
-@Table(name = "posts")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
-public class Post {
+public class PostResponse {
 
     private Long id;
     private String username;
