@@ -35,8 +35,6 @@ public class SecurityConfig {
                  .anyRequest()
                  .authenticated()
                  .and()
-                 .oauth2Login()
-                 .and()
                  .sessionManagement()
                  .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                  .and()
