@@ -15,7 +15,7 @@ public class PostResponse {
 
     private Long id;
     private String username;
-    private Base64 photo;
+    private byte[] photo;
     private String content;
     private Long likes;
 

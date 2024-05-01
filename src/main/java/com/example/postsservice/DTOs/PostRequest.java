@@ -14,7 +14,7 @@ import java.util.Base64;
 public class PostRequest {
 
     private String username;
-    private Base64 photo;
+    private byte[] photo;
     private String content;
     private Long likes;
 
