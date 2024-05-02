@@ -31,6 +31,7 @@ public class User implements UserDetails {
     @Column(name = "nom", nullable = false)
     private String lastName;
 
+    private byte[] photo;
 
     @Column(name = "username", nullable = false)
     private String login;
