@@ -36,6 +36,9 @@ public class User implements UserDetails {
     @Column(name = "username", nullable = false)
     private String login;
 
+    @OneToMany
+    private List<User> friends;
+
 
     @Column(nullable = false)
     private String email;
