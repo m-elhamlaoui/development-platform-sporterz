@@ -40,9 +40,9 @@ public class UserService {
         Map<String, String> userData = new HashMap<>();
         userData.put("email", email);
         userData.put("login", login);
-        userData.put("firstname", firstname);
-        userData.put("lastname", lastname);
-        userData.put("picture", picture != null ? Base64.getEncoder().encodeToString(picture) : null);
+        userData.put("firstName", firstname);
+        userData.put("lastName", lastname);
+        userData.put("photo", picture != null ? Base64.getEncoder().encodeToString(picture) : null);
 
         return ResponseEntity.ok(userData);
     }

@@ -50,7 +50,8 @@ public class AuthenticationService {
         var jwtToken = jwtService.generateToken(user);
         return AuthentificationResponse.builder()
                 .token(jwtToken)
-                .userName(userRepository.findByEmail(request.getEmail()).get().getLogin())
+                .userId(user.getUserId())
+                .userName(user.getLogin())
                 .build();
     }
 }
