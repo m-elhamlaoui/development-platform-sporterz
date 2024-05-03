@@ -81,4 +81,14 @@ public class UserService {
             return null;
         }
     }
+
+    public void addFriend(Long actualUserId, Long friendUserId) {
+        User actualUser = userRepository.findById(actualUserId).orElseThrow();
+        User friendUser = userRepository.findById(friendUserId).orElseThrow();
+
+        actualUser.getFriends().add(friendUser);
+        friendUser.getFriends().add(actualUser);
+        userRepository.save(actualUser);
+        userRepository.save(friendUser);
+    }
 }
