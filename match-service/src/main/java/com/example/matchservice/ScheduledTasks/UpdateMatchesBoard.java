@@ -18,7 +18,7 @@ public class UpdateMatchesBoard {
         this.matchesBoard = matchesBoard;
     }
 
-    @Scheduled(cron = "5 * * * * *")
+    @Scheduled(cron = "0 0 6 * * *")
     private void dailyMatchesBoardUpdate() throws ParseException {
         matchesBoard.deleteMatchesBoard();
         JSONObject matches = FootballApi.getBoardMatches(39);
