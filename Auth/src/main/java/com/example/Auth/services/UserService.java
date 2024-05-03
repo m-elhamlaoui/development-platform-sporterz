@@ -4,6 +4,7 @@ import com.example.Auth.models.User;
 import com.example.Auth.repositories.UserRepository;
 import io.jsonwebtoken.Claims;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Base64;
@@ -15,9 +16,11 @@ import java.util.Optional;
 public class UserService {
 
     private final JwtService jwtService;
+    private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
-    public UserService(JwtService jwtService, UserRepository userRepository) {
+    public UserService(JwtService jwtService, PasswordEncoder passwordEncoder, UserRepository userRepository) {
         this.jwtService = jwtService;
+        this.passwordEncoder = passwordEncoder;
         this.userRepository = userRepository;
     }
 
@@ -64,10 +67,10 @@ public class UserService {
             }
 
             if (user.getPhoto() != null) {
-                existingUser.setPhoto(user.getPhoto());
+                existingUser.setPhoto(Base64.getEncoder().encodeToString(user.getPhoto()).getBytes());
             }
             if (user.getPassword() != null) {
-                existingUser.setPassword(user.getPassword());
+                existingUser.setPassword(passwordEncoder.encode(user.getPassword()));
             }
             if (user.getRole() != null) {
                 existingUser.setRole(user.getRole());
