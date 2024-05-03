@@ -1,5 +1,6 @@
 package com.example.Auth.controllers;
 
+import com.example.Auth.models.FriendRequest;
 import com.example.Auth.models.User;
 import com.example.Auth.repositories.UserRepository;
 import com.example.Auth.services.UserService;
@@ -46,7 +47,7 @@ public class UsersController {
     }
 
     @PostMapping("/addFriend")
-    public void addFriend(@RequestParam Long actualUserId, @RequestParam Long friendUserId) {
-        userService.addFriend(actualUserId, friendUserId);
+    public void addFriend(@RequestBody FriendRequest friendRequest) {
+        userService.addFriend(friendRequest);
     }
 }

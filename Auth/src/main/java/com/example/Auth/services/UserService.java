@@ -1,5 +1,6 @@
 package com.example.Auth.services;
 
+import com.example.Auth.models.FriendRequest;
 import com.example.Auth.models.User;
 import com.example.Auth.repositories.UserRepository;
 import io.jsonwebtoken.Claims;
@@ -82,9 +83,9 @@ public class UserService {
         }
     }
 
-    public void addFriend(Long actualUserId, Long friendUserId) {
-        User actualUser = userRepository.findById(actualUserId).orElseThrow();
-        User friendUser = userRepository.findById(friendUserId).orElseThrow();
+    public void addFriend(FriendRequest friendRequest) {
+        User actualUser = userRepository.findById(friendRequest.getActualUserId()).orElseThrow();
+        User friendUser = userRepository.findById(friendRequest.getFriendUserId()).orElseThrow();
 
         actualUser.getFriends().add(friendUser);
         friendUser.getFriends().add(actualUser);

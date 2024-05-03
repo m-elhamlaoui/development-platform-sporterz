@@ -52,6 +52,7 @@ public class AuthenticationService {
                 .token(jwtToken)
                 .userId(user.getUserId())
                 .userName(user.getLogin())
+                .friends(user.getFriends())
                 .build();
     }
 }
