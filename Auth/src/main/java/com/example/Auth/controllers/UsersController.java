@@ -17,7 +17,6 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class UsersController {
 
-    @Autowired
     private final UserService userService;
 
     private final UserRepository userRepository;
@@ -38,10 +37,16 @@ public class UsersController {
         }
         return null;
     }
+
     @PostMapping("/update")
     public ResponseEntity<User> updateUser(@RequestBody User user, @RequestHeader("Authorization") String authorizationHeader) {
         String token = extractTokenFromHeader(authorizationHeader);
         userService.updateUser(user, token);
         return ResponseEntity.status(200).build();
+    }
+
+    @PostMapping("/addFriend")
+    public ResponseEntity<User> addFriend(@RequestParam User actualUserId, @RequestParam Long friendUserId) {
+        return userService.addFriend(user);
     }
 }
