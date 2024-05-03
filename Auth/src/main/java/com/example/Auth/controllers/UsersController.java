@@ -46,7 +46,7 @@ public class UsersController {
     }
 
     @PostMapping("/addFriend")
-    public ResponseEntity<User> addFriend(@RequestParam User actualUserId, @RequestParam Long friendUserId) {
-        return userService.addFriend(user);
+    public void addFriend(@RequestParam User actualUserId, @RequestParam Long friendUserId) {
+        //return userService.addFriend(user);
     }
 }
