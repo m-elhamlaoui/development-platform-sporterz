@@ -6,12 +6,8 @@ import com.example.Auth.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RequestHeader;
 import java.util.List;
 import java.util.Map;
 
@@ -41,5 +37,11 @@ public class UsersController {
             return authorizationHeader.substring(7);
         }
         return null;
+    }
+    @PostMapping("/update")
+    public ResponseEntity<User> updateUser(@RequestBody User user, @RequestHeader("Authorization") String authorizationHeader) {
+        String token = extractTokenFromHeader(authorizationHeader);
+        userService.updateUser(user, token);
+        return ResponseEntity.status(200).build();
     }
 }

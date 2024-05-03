@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -20,9 +21,14 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public ResponseEntity<Map<String, String>> getCurrentUser(String token) {
+    public User getUser(String token) {
         String email = jwtService.extractClaim(token, Claims::getSubject);
-        User currentUser = userRepository.findByEmail(email).orElseThrow();
+        return userRepository.findByEmail(email).orElseThrow();
+    }
+
+    public ResponseEntity<Map<String, String>> getCurrentUser(String token) {
+        User currentUser = getUser(token);
+        String email = currentUser.getEmail();
         String login = currentUser.getLogin();
         String firstname = currentUser.getFirstName();
         String lastname = currentUser.getLastName();
@@ -36,5 +42,40 @@ public class UserService {
         userData.put("picture", picture != null ? Base64.getEncoder().encodeToString(picture) : null);
 
         return ResponseEntity.ok(userData);
+    }
+
+    public User updateUser(User user, String token) {
+        User updatedUser = getUser(String.valueOf(token));
+        Optional<User> existingUserOptional = userRepository.findById(updatedUser.getUserId());
+        if (existingUserOptional.isPresent()) {
+            User existingUser = existingUserOptional.get();
+
+            if (user.getEmail() != null) {
+                existingUser.setEmail(user.getEmail());
+            }
+            if (user.getLogin() != null) {
+                existingUser.setLogin(user.getLogin());
+            }
+            if (user.getFirstName() != null) {
+                existingUser.setFirstName(user.getFirstName());
+            }
+            if (user.getLastName() != null) {
+                existingUser.setLastName(user.getLastName());
+            }
+
+            if (user.getPhoto() != null) {
+                existingUser.setPhoto(user.getPhoto());
+            }
+            if (user.getPassword() != null) {
+                existingUser.setPassword(user.getPassword());
+            }
+            if (user.getRole() != null) {
+                existingUser.setRole(user.getRole());
+            }
+
+            return userRepository.save(existingUser);
+        } else {
+            return null;
+        }
     }
 }
