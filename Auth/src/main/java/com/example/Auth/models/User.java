@@ -36,9 +36,8 @@ public class User implements UserDetails {
     @Column(name = "username", nullable = false)
     private String login;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<User> friends;
-
 
     @Column(nullable = false)
     private String email;
