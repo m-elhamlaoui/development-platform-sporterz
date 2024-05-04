@@ -50,4 +50,9 @@ public class UsersController {
     public void addFriend(@RequestBody FriendRequest friendRequest) {
         userService.addFriend(friendRequest);
     }
+
+    @GetMapping("/getFriends")
+    public ResponseEntity<List<User>> getFriends(@RequestParam Long actualUserId) {
+        return ResponseEntity.ok(userRepository.findById(actualUserId).get().getFriends());
+    }
 }

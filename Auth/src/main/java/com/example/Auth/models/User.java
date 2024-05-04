@@ -1,6 +1,7 @@
 package com.example.Auth.models;
 
 import com.example.Auth.enumirations.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Builder
@@ -31,13 +33,19 @@ public class User implements UserDetails {
     @Column(name = "nom", nullable = false)
     private String lastName;
 
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(
+        name = "user_friends",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "friend_id")
+    )
+    private List<User> friends;
+
     private byte[] photo;
 
     @Column(name = "username", nullable = false)
     private String login;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<User> friends;
 
     @Column(nullable = false)
     private String email;

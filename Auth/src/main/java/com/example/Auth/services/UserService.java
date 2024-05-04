@@ -88,8 +88,8 @@ public class UserService {
         User friendUser = userRepository.findById(friendRequest.getFriendUserId()).orElseThrow();
 
         actualUser.getFriends().add(friendUser);
-        friendUser.getFriends().add(actualUser);
+        //friendUser.getFriends().add(actualUser);
         userRepository.save(actualUser);
-        userRepository.save(friendUser);
+        //userRepository.save(friendUser);
     }
 }
