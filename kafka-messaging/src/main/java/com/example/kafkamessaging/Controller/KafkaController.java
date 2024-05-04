@@ -1,6 +1,7 @@
 package com.example.kafkamessaging.Controller;
 
 import com.example.kafkamessaging.MessageRecord;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.apache.kafka.clients.admin.AdminClient;
@@ -14,16 +15,11 @@ import java.util.concurrent.ExecutionException;
 
 @RestController
 @RequestMapping("api/kafka")
+@RequiredArgsConstructor
 public class KafkaController {
 
     private final KafkaTemplate<String, String> kafkaTemplate;
     private final AdminClient adminClient;
-
-    @Autowired
-    public KafkaController(KafkaTemplate<String, String> kafkaTemplate, AdminClient adminClient) {
-        this.kafkaTemplate = kafkaTemplate;
-        this.adminClient = adminClient;
-    }
 
     @PostMapping("send/{topic}")
     public void publish(@PathVariable("topic") String topic, @RequestBody MessageRecord messageRecord) {
