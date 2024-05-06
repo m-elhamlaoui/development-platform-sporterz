@@ -36,14 +36,14 @@ public class UserService {
         String login = currentUser.getLogin();
         String firstname = currentUser.getFirstName();
         String lastname = currentUser.getLastName();
-        byte[] picture = currentUser.getPhoto();
+        String picture = currentUser.getPhoto();
 
         Map<String, String> userData = new HashMap<>();
         userData.put("email", email);
         userData.put("login", login);
         userData.put("firstName", firstname);
         userData.put("lastName", lastname);
-        userData.put("photo", picture != null ? Base64.getEncoder().encodeToString(picture) : null);
+        userData.put("photo", picture);
 
         return ResponseEntity.ok(userData);
     }
@@ -68,7 +68,7 @@ public class UserService {
             }
 
             if (user.getPhoto() != null) {
-                existingUser.setPhoto(Base64.getEncoder().encodeToString(user.getPhoto()).getBytes());
+                existingUser.setPhoto(user.getPhoto());
             }
             if (user.getPassword() != null) {
                 existingUser.setPassword(passwordEncoder.encode(user.getPassword()));

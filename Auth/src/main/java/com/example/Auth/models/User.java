@@ -42,7 +42,7 @@ public class User implements UserDetails {
     )
     private List<User> friends;
 
-    private byte[] photo;
+    private String photo;
 
     @Column(name = "username", nullable = false)
     private String login;
