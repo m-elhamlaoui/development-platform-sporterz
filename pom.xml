@@ -7,12 +7,11 @@
     <version>3.2.5</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
+
   <groupId>com.sporterz</groupId>
   <artifactId>sporterz-services</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>sporterz-services</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
@@ -27,6 +26,8 @@
         <version>4.11</version>
         <scope>test</scope>
       </dependency>
+
+
     </dependencies>
   </dependencyManagement>
 
@@ -45,14 +46,6 @@
           </excludes>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>8</source>
-          <target>8</target>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
 
@@ -60,10 +53,8 @@
     <module>messaging-service</module>
     <module>auth-service</module>
     <module>posts-service</module>
+    <module>api-gateway</module>
+    <module>match-service</module>
   </modules>
-
-  <!-- hadchi khdam : yassin dak messaging kib9a b7al hakak listening?-->
-  <!-- mochkil kan f posts bo7dha man pushiwhach db nzido api-gateway? -->
-  <!-- ig baraka -->
 
 </project>
