@@ -17,9 +17,13 @@ spring:
             predicates:
               - Path=/match-service/**
           - id: security-service
-            uri: http://localhost:8081
+            uri: http://localhost:8085
             predicates:
               - Path=/api/auth/**
+          - id: posts-service
+            uri: http://localhost:8081
+            predicates:
+              - Path=/api/posts/**
 
 server:
   port: 8888
