@@ -25,29 +25,25 @@ public class SecurityConfig {
     private final JwtAuthentificationFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
 
-     @Bean
-     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-         http.csrf()
-                 .disable()
-                 .authorizeHttpRequests()
-                 .requestMatchers("/api/auth/**")
-                 .permitAll()
-                 .anyRequest()
-                 .authenticated()
-                 .and()
-                 .sessionManagement()
-                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                 .and()
-                 .authenticationProvider(authenticationProvider)
-                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
-                 .cors();
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/auth/**").permitAll()
+                        .anyRequest().authenticated())
+                .sessionManagement(sess -> sess
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authenticationProvider(authenticationProvider)
+                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+                .cors((cors) -> cors
+                        .configurationSource(corsConfigurationSource()));
         return http.build();
-     }
+    }
 
      @Bean
     public CorsConfigurationSource corsConfigurationSource() {
          CorsConfiguration corsConfiguration = new CorsConfiguration();
-         corsConfiguration.setAllowedOrigins(Collections.singletonList("http://localhost:4200"));
+         corsConfiguration.setAllowedOrigins(Collections.singletonList("http://localhost:8888"));
          corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
          corsConfiguration.setAllowedHeaders(Arrays.asList("authorization", "content-type", "x-auth-token"));
          corsConfiguration.setExposedHeaders(Arrays.asList("x-auth-token", "Authorization"));

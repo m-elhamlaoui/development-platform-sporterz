@@ -6,7 +6,6 @@ spring:
     discovery:
       enabled: false
     gateway:
-      mvc:
         routes:
           - id: kafka-messaging
             uri: http://localhost:8083
@@ -24,6 +23,16 @@ spring:
             uri: http://localhost:8081
             predicates:
               - Path=/api/posts/**
+          - id: angular
+            uri: http://localhost:4200
+            predicates:
+              - Path=/**
+        globalcors:
+          corsConfigurations:
+            '[/**]':
+              allowedOrigins: "*"
+              allowedHeaders: "*"
+              allowedMethods: "*"
 
 server:
   port: 8888
