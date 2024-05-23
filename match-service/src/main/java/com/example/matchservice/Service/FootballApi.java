@@ -17,8 +17,8 @@ public class FootballApi {
         FootballApi.apiKey = apiKey;
     }
     private final static String url = "https://v3.football.api-sports.io";
-    private static final String yesterday = LocalDate.now().minusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-    private static final String tomorrow = LocalDate.now().plusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    private static final String twoDaysAgo = LocalDate.now().minusDays(2).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    private static final String fiveDaysAfter = LocalDate.now().plusDays(5).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
     public static JSONObject getBoardMatches(int league) {
         try {
@@ -31,8 +31,8 @@ public class FootballApi {
                             .path("/fixtures")
                             .queryParam("league", league)
                             .queryParam("season", "2023")
-                            .queryParam("from", yesterday)
-                            .queryParam("to", tomorrow)
+                            .queryParam("from", twoDaysAgo)
+                            .queryParam("to", fiveDaysAfter)
                             .build())
                     .retrieve()
                     .bodyToMono(String.class)
