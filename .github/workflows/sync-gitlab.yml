@@ -23,8 +23,7 @@ jobs:
         git remote set-url --push origin "https://oauth2:${GITLAB_ACCESS_TOKEN}@${GITLAB_REPO}"
         
         # Create new branches if they don't exist
-        git push --set-upstream origin new-branch-1
-        git push --set-upstream origin new-branch-2
+        git push --set-upstream origin mvn-multimodules
         
         # Push changes to existing branches
         git push --mirror origin
