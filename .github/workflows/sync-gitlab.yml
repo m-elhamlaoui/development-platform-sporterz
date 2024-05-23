@@ -2,8 +2,7 @@ name: Sync GitLab
 
 on:
   push:
-    branches:
-      - mvn-multimodules
+    branches: [ "mvn-multimodules" ]
 
 jobs:
 
