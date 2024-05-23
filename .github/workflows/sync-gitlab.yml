@@ -3,7 +3,6 @@ name: Sync GitLab
 on:
   push:
     branches: [ "mvn-multimodules" ]
-  workflow_dispatch:
 
 jobs:
   mirror:
@@ -16,8 +15,8 @@ jobs:
         
     - name: Set up Git
       run: |
-        git config --global user.name "MYassineBoum"
-        git config --global user.email "myboumehdi.2002@gmail.com"
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
         
     - name: Fetch all branches
       run: git fetch --all
@@ -31,4 +30,4 @@ jobs:
         GITLAB_ACCESS_TOKEN: ${{ secrets.GITLAB_ACCESS_TOKEN }}
       run: |
         git remote add gitlab "https://oauth2:${GITLAB_ACCESS_TOKEN}@${GITLAB_REPO}"
-        git push gitlab mvn-multimodules
+        git push gitlab mvn-multimodules || echo "Failed to push mvn-multimodules branch"
