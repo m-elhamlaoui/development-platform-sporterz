@@ -52,12 +52,14 @@
 <table>
 
 # System Design <a id="system-design"></a>
+![sys_des_sporterz](https://github.com/m-elhamlaoui/development-platform-sporterz/assets/115194839/6e06c3d4-f7f6-47d2-98ec-52a2a8543263)
 
 ## Functional Requirements <a id="Functional-Requirements"></a>
 
 ### Authentication and Login
 * Account creation
 * Single Sign-On (SSO) login
+
 
 ### Messaging
 * Sending and receiving private messages
