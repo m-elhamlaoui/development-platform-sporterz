@@ -131,9 +131,13 @@
 ![Figure 1: Diagramme de cas d’utilisation](https://www.plantuml.com/plantuml/png/ZPB1QlCm48JlUeh5b_-K5_W98QNGGo6jQTfBRq9UnwAojaZhb53wxgsbn7ZHHRVix7oHPgnzP1ru6fros3CmGR2dWQ6p0GrRyaeRfW1l4GFe2Ctyer5gtcf_SWZ7JmgCuVrR0KmHZOu8pJrvZoRzN-iqznJ6PiQl-arR8qVq7RJ1dZKZ7316VSAOe7bp4mJ1-W9FnBQts44VQ8G7VQPW6U4LzPZfsNKphUb7iXwa_n-y45snUPqc4Mj0ym4jHSwcDATHt6lG0LUkD1UknAPZi5kTc-Ii5iSVgBFz1Tf0lNMOx5cwAaMyEyEJTd3GR0OiukLjNigh1TICyFpbLqGM_xHyBGNvJMmsE_61X2wgNtJHxIAABXTrwKvwPKbY9nfPBOh8WYhIYL3P8jyk_8VjrdhZfWvtEmKYROr_QQ76lBHJvKwjrRgBDciOqN85KBPV0uclKa6e7xL7tqsZ-mK0)
 
 ## Project Architecture
+#### First Version
+<div style="text-align: center;">
+  <img src="https://i.ibb.co/NNwWD8k/sys-Design1.jpg" alt="Secrets" width="full">
+</div>
 
-![Project Architecture](https://github-production-user-asset-6210df.s3.amazonaws.com/115194839/317356426-3d8a427b-6da9-4e2c-bd34-56d0a7ceeb36.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240523%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240523T225651Z&X-Amz-Expires=300&X-Amz-Signature=a5415b93d3946f3c151c1120037ee19c2d74c396dfd279deb33fdf4a672067a9&X-Amz-SignedHeaders=host&actor_id=85839515&key_id=0&repo_id=756865469)
-
+#### Updated Version
+![sys_des_sporterz](https://github.com/m-elhamlaoui/development-platform-sporterz/assets/115194839/6e06c3d4-f7f6-47d2-98ec-52a2a8543263)
 
 ## Application Mockup   
 
@@ -215,15 +219,21 @@ The method clears an existing matches board, retrieves match data from an extern
 
 ### GitHub/GitLab Sync Pipeline
 
-<!-- Add GitHub/GitLab sync pipeline details here -->
+<div style="text-align: center;">
+  <img src="https://i.ibb.co/r4FvXF3/sync.png" alt="Secrets" width="full">
+</div>
 
 ### CI/CD Using GitLab-CI
 
-<!-- Add CI/CD using GitLab-CI details here -->
+<div style="text-align: center;">
+  <img src="https://i.ibb.co/GHPftyz/CI-CD.jpg" alt="Secrets" width="full">
+</div>
 
 ### API Gateway
 
-<!-- Add API gateway details here -->
+<div style="text-align: center;">
+  <img src="https://i.ibb.co/TmwBnhq/api-Gateway.png" alt="Secrets" width="full">
+</div>
 
 ### Monitoring
 
