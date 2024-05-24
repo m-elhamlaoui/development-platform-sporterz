@@ -4,6 +4,7 @@
 ## Descriptif du projet
 SporterZ est une plateforme sociale conçue spécifiquement pour les passionnés de football. Elle offre un espace interactif où les fans peuvent échanger leurs idées, recevoir des notifications sur les matches de leurs équipes préférées, et participer à des discussions en direct avec d’autres fans dans des salles dédiées aux équipes ou aux matches. Les utilisateurs ont la possibilité de voter sur les résultats des matches, de partager des publications sur leur profil et de créer leurs propres salles de discussion. De plus, SporterZ propose une fonction de messagerie privée et de partage externe. L’interface de la plateforme est organisée de manière à présenter du contenu suggéré ainsi que du contenu suivi par l’utilisateur.
 
+
 ---
 
 ## Diagramme de cas d’utilisation
