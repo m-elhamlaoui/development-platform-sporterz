@@ -52,7 +52,7 @@
 <table>
 
 # System Design <a id="system-design"></a>
-![system_design_sporterz](https://github.com/m-elhamlaoui/development-platform-sporterz/assets/115194839/2384d26c-2860-4b41-ac4d-fcfbce581ec1)
+![sys_des_sporterz](https://github.com/m-elhamlaoui/development-platform-sporterz/assets/115194839/6e06c3d4-f7f6-47d2-98ec-52a2a8543263)
 
 ## Functional Requirements <a id="Functional-Requirements"></a>
 
