@@ -24,21 +24,10 @@ jobs:
       - name: Checkout mvn-multimodules branch
         run: git checkout mvn-multimodules
 
-      - name: Add GitLab remote
+      - name: Sync GitLab
         env:
           GITLAB_REPO: ${{ secrets.GITLAB_REPO }}
-        run: git remote add gitlab "${{ secrets.GITLAB_REPO }}"
-
-      - name: Fetch GitLab branch
-        env:
-          GITLAB_ACCESS_TOKEN: ${{ secrets.GITLAB_ACCESS_TOKEN }}
-        run: git fetch gitlab
-
-      - name: Merge changes from GitLab
-        run: git merge gitlab/mvn-multimodules --allow-unrelated-histories || git merge --abort
-
-      - name: Push to GitLab
-        env:
           GITLAB_ACCESS_TOKEN: ${{ secrets.GITLAB_ACCESS_TOKEN }}
         run: |
+          git remote add gitlab "https://oauth2:${GITLAB_ACCESS_TOKEN}@${GITLAB_REPO}"
           git push gitlab mvn-multimodules || echo "Failed to push mvn-multimodules branch"
