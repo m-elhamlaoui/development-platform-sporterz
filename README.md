@@ -135,7 +135,7 @@
 ![Project Architecture](https://github-production-user-asset-6210df.s3.amazonaws.com/115194839/317356426-3d8a427b-6da9-4e2c-bd34-56d0a7ceeb36.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240523%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240523T225651Z&X-Amz-Expires=300&X-Amz-Signature=a5415b93d3946f3c151c1120037ee19c2d74c396dfd279deb33fdf4a672067a9&X-Amz-SignedHeaders=host&actor_id=85839515&key_id=0&repo_id=756865469)
 
 
-## Application Mockup 
+## Application Mockup   
 
 ![Figure 2: Acceuil et navigation](https://i.ibb.co/R6bqMR0/HOME.png)
 
