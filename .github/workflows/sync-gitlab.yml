@@ -32,5 +32,5 @@ jobs:
       run: |
         git remote add gitlab "https://oauth2:${GITLAB_ACCESS_TOKEN}@${GITLAB_REPO}"
         git fetch gitlab
-        git pull gitlab
+        git pull gitlab mvn-multimodules
         git push gitlab mvn-multimodules
