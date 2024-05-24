@@ -6,7 +6,6 @@ SporterZ est une plateforme sociale conçue spécifiquement pour les passionnés
 
 ---
 
-
 ## Diagramme de cas d’utilisation
 ![Figure 1: Diagramme de cas d’utilisation](https://www.plantuml.com/plantuml/png/ZPB1QlCm48JlUeh5b_-K5_W98QNGGo6jQTfBRq9UnwAojaZhb53wxgsbn7ZHHRVix7oHPgnzP1ru6fros3CmGR2dWQ6p0GrRyaeRfW1l4GFe2Ctyer5gtcf_SWZ7JmgCuVrR0KmHZOu8pJrvZoRzN-iqznJ6PiQl-arR8qVq7RJ1dZKZ7316VSAOe7bp4mJ1-W9FnBQts44VQ8G7VQPW6U4LzPZfsNKphUb7iXwa_n-y45snUPqc4Mj0ym4jHSwcDATHt6lG0LUkD1UknAPZi5kTc-Ii5iSVgBFz1Tf0lNMOx5cwAaMyEyEJTd3GR0OiukLjNigh1TICyFpbLqGM_xHyBGNvJMmsE_61X2wgNtJHxIAABXTrwKvwPKbY9nfPBOh8WYhIYL3P8jyk_8VjrdhZfWvtEmKYROr_QQ76lBHJvKwjrRgBDciOqN85KBPV0uclKa6e7xL7tqsZ-mK0)
 
