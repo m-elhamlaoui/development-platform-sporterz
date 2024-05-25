@@ -31,5 +31,10 @@ jobs:
       run: |
         git remote add gitlab "https://oauth2:${GITLAB_ACCESS_TOKEN}@${GITLAB_REPO}"
         git fetch gitlab mvn-multimodules
-        git rebase gitlab/mvn-multimodules || echo "Rebase conflict occurred, resolving manually."
-        git push gitlab mvn-multimodules --force || echo "Failed to push mvn-multimodules branch"
+        set -e
+        git rebase gitlab/mvn-multimodules || (
+          echo "Rebase conflict occurred, attempting to resolve automatically"
+          git rebase --abort
+          git merge --no-ff gitlab/mvn-multimodules
+          git push gitlab mvn-multimodules --force || echo "Failed to push mvn-multimodules branch"
+        )
