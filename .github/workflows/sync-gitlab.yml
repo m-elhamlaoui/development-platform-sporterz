@@ -7,34 +7,27 @@ on:
 jobs:
   mirror:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-        
-    - name: Set up Git
-      run: |
-        git config --global user.name "MYassineBoum"
-        git config --global user.email "myboumehdi.2002@gmail.com"
-        
-    - name: Fetch all branches
-      run: git fetch --all
-    
-    - name: Checkout mvn-multimodules branch
-      run: git checkout mvn-multimodules
-    
-    - name: Sync GitLab
-      env:
-        GITLAB_REPO: ${{ secrets.GITLAB_REPO }}
-        GITLAB_ACCESS_TOKEN: ${{ secrets.GITLAB_ACCESS_TOKEN }}
-      run: |
-        git remote add gitlab "https://oauth2:${GITLAB_ACCESS_TOKEN}@${GITLAB_REPO}"
-        git fetch gitlab mvn-multimodules
-        set -e
-        git rebase gitlab/mvn-multimodules || (
-          echo "Rebase conflict occurred, attempting to resolve automatically"
-          git rebase --abort
-          git merge --no-ff gitlab/mvn-multimodules
-          git push gitlab mvn-multimodules --force || echo "Failed to push mvn-multimodules branch"
-        )
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Fetch all branches
+        run: git fetch --all
+
+      - name: Checkout mvn-multimodules branch
+        run: git checkout mvn-multimodules
+
+      - name: Sync GitLab
+        env:
+          GITLAB_REPO: ${{ secrets.GITLAB_REPO }}
+          GITLAB_ACCESS_TOKEN: ${{ secrets.GITLAB_ACCESS_TOKEN }}
+        run: |
+          git remote add gitlab "https://oauth2:${GITLAB_ACCESS_TOKEN}@${GITLAB_REPO}"
+          git push gitlab mvn-multimodules || echo "Failed to push mvn-multimodules branch"
