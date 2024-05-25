@@ -77,6 +77,7 @@
 * Like and comment on posts
 * Share posts
 
+
 ### Sharing Posts
 * Share to your profile
 * Share posts to other social networks
