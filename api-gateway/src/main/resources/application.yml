@@ -7,26 +7,44 @@ spring:
       enabled: false
     gateway:
         routes:
+### k8s config :
           - id: kafka-messaging
-            uri: http://localhost:8083
+            uri: http://messaging-service:8083
             predicates:
               - Path=/api/kafka/**
           - id: match-service
-            uri: http://localhost:8082
+            uri: http://match-service:8082
             predicates:
               - Path=/match-service/**
           - id: security-service
-            uri: http://localhost:8085
+            uri: http://auth-service:8085
             predicates:
               - Path=/api/auth/**
           - id: posts-service
-            uri: http://localhost:8081
+            uri: http://posts-service:8081
             predicates:
               - Path=/api/posts/**
-          - id: angular
-            uri: http://localhost:4200
-            predicates:
-              - Path=/**
+### Local config :
+#          - id: kafka-messaging
+#            uri: http://localhost:8083
+#            predicates:
+#              - Path=/api/kafka/**
+#          - id: match-service
+#            uri: http://localhost:8082
+#            predicates:
+#              - Path=/match-service/**
+#          - id: security-service
+#            uri: http://localhost:8085
+#            predicates:
+#              - Path=/api/auth/**
+#          - id: posts-service
+#            uri: http://localhost:8081
+#            predicates:
+#              - Path=/api/posts/**
+#          - id: angular
+#            uri: http://localhost:4200
+#            predicates:
+#              - Path=/**
         globalcors:
           corsConfigurations:
             '[/**]':
