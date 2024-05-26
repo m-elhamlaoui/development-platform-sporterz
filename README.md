@@ -137,10 +137,9 @@
 </div>
 
 #### Updated Version
-![sys_des_sporterz](https://github.com/m-elhamlaoui/development-platform-sporterz/assets/115194839/6e06c3d4-f7f6-47d2-98ec-52a2a8543263)
+<a href="https://ibb.co/cxrC0ng"><img src="https://i.ibb.co/52RnmHM/IMG-20240524-WA0048.jpg" alt="IMG-20240524-WA0048" border="0"></a>
 
 ## Application Mockup   
-
 ![Figure 2: Acceuil et navigation](https://i.ibb.co/R6bqMR0/HOME.png)
 
 ## Build System
