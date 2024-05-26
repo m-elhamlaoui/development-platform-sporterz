@@ -138,7 +138,7 @@
 
 #### Updated Version
 <div style="text-align: center;">
-  <img src="https://i.ibb.co/52RnmHM/IMG-20240524-WA0048.jpg" alt="New System Design" width="full" />
+  <img src="https://i.ibb.co/52RnmHM/IMG-20240524-WA0048.jpg" alt="New System Design" width="full">
 </div>
 
 ## Application Mockup   
