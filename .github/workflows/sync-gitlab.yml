@@ -35,4 +35,4 @@ jobs:
       run: |
         git remote add gitlab "https://oauth2:${GITLAB_ACCESS_TOKEN}@${GITLAB_REPO}"
         git pull gitlab mvn-multimodules --rebase
-        git push gitlab mvn-multimodules
+        git push gitlab mvn-multimodules --reapply-cherry-picks to include skipped commits
