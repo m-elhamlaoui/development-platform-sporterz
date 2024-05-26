@@ -3,7 +3,7 @@ version: '3'
 services:
 
   api-gateway:
-    image: myassineboum/sporterz-web:api-gateway-compose
+    image: myassineboum/sporterz-web:api-gateway
     ports:
       - "8888:8888"
     networks:
@@ -38,7 +38,7 @@ services:
       - sporterz-network
 
   frontend:
-    image: myassineboum/sporterz-web:frontend-nginx
+    image: myassineboum/sporterz-web:frontend
     ports:
       - "4200:4200"
     networks:
@@ -47,7 +47,7 @@ services:
   nginx:
     image: nginx:latest
     ports:
-      - "80:80"
+      - "99:99"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
     depends_on:

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Collections;
 import java.util.concurrent.ExecutionException;
 
+@CrossOrigin(origins = "http://localhost:8888")
 @RestController
 @RequestMapping("api/kafka")
 @RequiredArgsConstructor

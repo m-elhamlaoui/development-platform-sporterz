@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = {"http://localhost:8888", "http://localhost:4200"})
+@CrossOrigin(origins = {"http://localhost:8888"} )
 @RestController
 @RequestMapping("/api/auth/")
 @RequiredArgsConstructor

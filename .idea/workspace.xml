@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1251fe02-2401-48f1-b5db-a68f62fc808c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/messaging-service/src/main/java/com/example/kafkamessaging/Config/KafkaConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/Auth/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/Auth/controllers/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/Auth/controllers/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/Auth/controllers/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grafana/alerting/1/__default__.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/grafana/alerting/1/__default__.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grafana/grafana.db" beforeDir="false" afterPath="$PROJECT_DIR$/grafana/grafana.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messaging-service/src/main/java/com/example/kafkamessaging/Controller/KafkaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-service/src/main/java/com/example/kafkamessaging/Controller/KafkaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-service/src/main/java/com/example/kafkamessaging/KafkaListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-service/src/main/java/com/example/kafkamessaging/KafkaListeners.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-service/src/main/java/com/example/kafkamessaging/KafkaMessagingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-service/src/main/java/com/example/kafkamessaging/KafkaMessagingApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-service/src/test/java/com/example/kafkamessaging/KafkaMessagingApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-service/src/test/java/com/example/kafkamessaging/KafkaMessagingApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -88,6 +88,9 @@
     "HTTP Request.mvn_multi-endpoints | #1.executor": "Run",
     "HTTP Request.mvn_multi-endpoints_2 | #1.executor": "Run",
     "HTTP Request.mvn_multi-endpoints_3 | #1.executor": "Run",
+    "HTTP Request.mvn_multi-endpoints_4 | #1.executor": "Run",
+    "HTTP Request.mvn_multi-endpoints_5 | #1.executor": "Run",
+    "HTTP Request.mvn_multi-endpoints_6 | #1.executor": "Run",
     "Maven.api-gateway [clean].executor": "Run",
     "Maven.api-gateway [deploy].executor": "Run",
     "Maven.api-gateway [install].executor": "Run",
@@ -146,7 +149,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.KafkaMessagingApplication">
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.apigateway.ApiGatewayApplication" />
@@ -209,12 +212,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.auth-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose.yml.nginx: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="auth-service" />
+              <option value="nginx" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
@@ -225,7 +228,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.auth-service: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.nginx: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.api-gateway: Compose Deployment" />
       </list>
     </recent_temporary>
@@ -251,7 +254,7 @@
       <workItem from="1716497950671" duration="515000" />
       <workItem from="1716551608291" duration="9776000" />
       <workItem from="1716650381938" duration="8253000" />
-      <workItem from="1716739735596" duration="7794000" />
+      <workItem from="1716739735596" duration="19178000" />
     </task>
     <servers />
   </component>
