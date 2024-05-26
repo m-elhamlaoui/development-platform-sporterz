@@ -25,7 +25,6 @@
   - [Monitoring](#monitoring)
   - [Dashboard](#dashboard)
   - [Kubernetes + Load Balancer](#kubernetes--load-balancer)
-- [How to run the project ?](#How-to-run-the-project-?)
 
 # Project Presentation <a id="project-presentation"></a>
 <div style="text-align: center;">
@@ -137,7 +136,9 @@
 </div>
 
 #### Updated Version
-![sys_des_sporterz](https://github.com/m-elhamlaoui/development-platform-sporterz/assets/115194839/6e06c3d4-f7f6-47d2-98ec-52a2a8543263)
+<div style="text-align: center;">
+  <img src="https://i.ibb.co/JkWQHG7/sys-Design.jpg" alt="Secrets" width="full">
+</div>
 
 ## Application Mockup   
 
@@ -154,8 +155,17 @@ The maven-multimodule setup enabled us to define dependencies between modules, s
 ## Good Practices
 
 ### Integration of Design Patterns
+#### Proxy Pattern
+The **Proxy Pattern** is effectively present in your architecture through the use of the API Gateway. 
 
-<!-- Add integration of design patterns details here -->
+This gateway acts as a proxy, managing access and communication between clients and microservices, and adding additional functionalities such as request transformation, logging, access control and caching.
+
+#### Observer pattern
+We use the **Observer pattern** in an Angular application to handle HTTP requests. 
+
+The AppHttpInterceptor class implements the HttpInterceptor interface to intercept HTTP requests and append an authorization token to the headers, unless the request is for authentication or registration. 
+
+This interception is part of the Observer pattern where the interceptor observes HTTP requests and modifies them as needed before passing them along the handler chain. 
 
 ### Testing
 <div style="text-align: center;">
@@ -184,7 +194,8 @@ For testing our microservices, we employed the following features:
 
 ### Real-Time Kafka Messaging
 
-<!-- Add real-time Kafka messaging details here -->
+**Krafana's real-time messaging service** sends messages to specific topics, where creating a new chat room means creating a new topic. 
+An embedded Kafka implementation is used to avoid the need for running a Kafka server locally.
 
 ### JWT Auth
 
@@ -237,16 +248,21 @@ The method clears an existing matches board, retrieves match data from an extern
 
 ### Monitoring
 
-<!-- Add monitoring details here -->
+<div style="text-align: center;">
+  <img src="https://i.ibb.co/CBnRdxV/prometheus.png" alt="Secrets" width="full">
+</div>
 
 ### Dashboard
 
-<!-- Add dashboard details here -->
+<div style="text-align: center;">
+  <img src="https://i.ibb.co/RDtYdbS/grafana.png" alt="Secrets" width="full">
+</div>
 
 ### Kubernetes + Load Balancer
 
-<!-- Add Kubernetes + load balancer details here -->
-
-## How to run the project ?
-
-<!-- How to run the project details here -->
+<div style="text-align: center;">
+  <img src="https://i.ibb.co/HTBjcb9/dockerhub.png" alt="Secrets" width="full">
+</div>
+<div style="text-align: center;">
+  <img src="https://i.ibb.co/whpsKdP/k8s.png" alt="Secrets" width="full">
+</div>
