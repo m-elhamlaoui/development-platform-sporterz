@@ -8,7 +8,7 @@ spring:
     gateway:
         routes:
 ### k8s config :
-          - id: kafka-messaging
+          - id: messaging-service
             uri: http://messaging-service:8083
             predicates:
               - Path=/api/kafka/**
@@ -16,7 +16,7 @@ spring:
             uri: http://match-service:8082
             predicates:
               - Path=/match-service/**
-          - id: security-service
+          - id: auth-service
             uri: http://auth-service:8085
             predicates:
               - Path=/api/auth/**
@@ -29,7 +29,7 @@ spring:
             predicates:
               - Path=/**
 ### Local config :
-#          - id: kafka-messaging
+#          - id: messaging-service
 #            uri: http://localhost:8083
 #            predicates:
 #              - Path=/api/kafka/**
@@ -37,7 +37,7 @@ spring:
 #            uri: http://localhost:8082
 #            predicates:
 #              - Path=/match-service/**
-#          - id: security-service
+#          - id: auth-service
 #            uri: http://localhost:8085
 #            predicates:
 #              - Path=/api/auth/**
