@@ -24,6 +24,10 @@ spring:
             uri: http://posts-service:8081
             predicates:
               - Path=/api/posts/**
+          - id: angular
+            uri: http://localhost:4200
+            predicates:
+              - Path=/**
 ### Local config :
 #          - id: kafka-messaging
 #            uri: http://localhost:8083

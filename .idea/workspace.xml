@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1251fe02-2401-48f1-b5db-a68f62fc808c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/messaging-service/src/main/java/com/example/kafkamessaging/Config/KafkaConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-service/src/main/java/com/example/kafkamessaging/Controller/KafkaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-service/src/main/java/com/example/kafkamessaging/Controller/KafkaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-service/src/main/java/com/example/kafkamessaging/KafkaListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-service/src/main/java/com/example/kafkamessaging/KafkaListeners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-service/src/main/java/com/example/kafkamessaging/KafkaMessagingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-service/src/main/java/com/example/kafkamessaging/KafkaMessagingApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messaging-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-service/src/test/java/com/example/kafkamessaging/KafkaMessagingApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-service/src/test/java/com/example/kafkamessaging/KafkaMessagingApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -80,6 +87,7 @@
     "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "HTTP Request.mvn_multi-endpoints | #1.executor": "Run",
     "HTTP Request.mvn_multi-endpoints_2 | #1.executor": "Run",
+    "HTTP Request.mvn_multi-endpoints_3 | #1.executor": "Run",
     "Maven.api-gateway [clean].executor": "Run",
     "Maven.api-gateway [deploy].executor": "Run",
     "Maven.api-gateway [install].executor": "Run",
@@ -89,9 +97,12 @@
     "Maven.match-service [deploy].executor": "Run",
     "Maven.messaging-service [clean].executor": "Run",
     "Maven.messaging-service [deploy].executor": "Run",
+    "Maven.messaging-service [install].executor": "Run",
     "Maven.messaging-service [package].executor": "Run",
     "Maven.posts-service [clean].executor": "Run",
     "Maven.posts-service [deploy].executor": "Run",
+    "Maven.sporterz-services [clean].executor": "Run",
+    "Maven.sporterz-services [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -100,6 +111,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.AuthApplication.executor": "Run",
+    "Spring Boot.KafkaMessagingApplication.executor": "Run",
+    "Spring Boot.MatchServiceApplication.executor": "Run",
+    "Spring Boot.PostsServiceApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "mvn-multimodules",
     "kotlin-language-version-configured": "true",
@@ -113,6 +128,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -130,10 +146,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.mvn_multi-endpoints_2 | #1">
-    <configuration name="mvn_multi-endpoints_2 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/mvn_multi-endpoints_2.http" requestIdentifier="#1" runType="Run single request">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.KafkaMessagingApplication">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.apigateway.ApiGatewayApplication" />
@@ -209,26 +222,11 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.frontend: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="frontend" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.mvn_multi-endpoints_2 | #1" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.auth-service: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.api-gateway: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.frontend: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -253,7 +251,7 @@
       <workItem from="1716497950671" duration="515000" />
       <workItem from="1716551608291" duration="9776000" />
       <workItem from="1716650381938" duration="8253000" />
-      <workItem from="1716739735596" duration="1331000" />
+      <workItem from="1716739735596" duration="7794000" />
     </task>
     <servers />
   </component>
@@ -311,5 +309,9 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
