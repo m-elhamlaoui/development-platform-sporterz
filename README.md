@@ -133,11 +133,13 @@
 ## Project Architecture
 #### First Version
 <div style="text-align: center;">
-  <img src="https://i.ibb.co/NNwWD8k/sys-Design1.jpg" alt="Secrets" width="full">
+  <img src="https://i.ibb.co/NNwWD8k/sys-Design1.jpg" alt="Old System Design" width="full">
 </div>
 
 #### Updated Version
-<a href="https://ibb.co/cxrC0ng"><img src="https://i.ibb.co/52RnmHM/IMG-20240524-WA0048.jpg" alt="IMG-20240524-WA0048" border="0"></a>
+<div style="text-align: center;">
+  <img src="https://i.ibb.co/52RnmHM/IMG-20240524-WA0048.jpg" alt="New System Design" width="full" />
+</div>
 
 ## Application Mockup   
 ![Figure 2: Acceuil et navigation](https://i.ibb.co/R6bqMR0/HOME.png)
