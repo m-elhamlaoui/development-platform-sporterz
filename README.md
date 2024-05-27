@@ -1,5 +1,6 @@
 # **Table of Contents**
 - [Project Presentation](#project-presentation)
+- [Structure of the repository](#structure-of-the-repository)
 - [Collaborators](#collaborators)
 - [System Design](#system-design)
   - [Functional Requirements](#Functional-Requirements)
@@ -49,6 +50,9 @@
     </tr>
   </tbody>
 <table>
+
+# Structure of the repository
+![Structure of the repo](https://i.ibb.co/GFcCfw6/Capture-d-cran-2024-05-27-030036.png)
 
 # System Design <a id="system-design"></a>
 ## Functional Requirements <a id="Functional-Requirements"></a>
@@ -128,6 +132,10 @@
 ### UML Diagrams
 #### Use Case Diagram
 ![Figure 1: Diagramme de cas d’utilisation](https://www.plantuml.com/plantuml/png/ZPB1QlCm48JlUeh5b_-K5_W98QNGGo6jQTfBRq9UnwAojaZhb53wxgsbn7ZHHRVix7oHPgnzP1ru6fros3CmGR2dWQ6p0GrRyaeRfW1l4GFe2Ctyer5gtcf_SWZ7JmgCuVrR0KmHZOu8pJrvZoRzN-iqznJ6PiQl-arR8qVq7RJ1dZKZ7316VSAOe7bp4mJ1-W9FnBQts44VQ8G7VQPW6U4LzPZfsNKphUb7iXwa_n-y45snUPqc4Mj0ym4jHSwcDATHt6lG0LUkD1UknAPZi5kTc-Ii5iSVgBFz1Tf0lNMOx5cwAaMyEyEJTd3GR0OiukLjNigh1TICyFpbLqGM_xHyBGNvJMmsE_61X2wgNtJHxIAABXTrwKvwPKbY9nfPBOh8WYhIYL3P8jyk_8VjrdhZfWvtEmKYROr_QQ76lBHJvKwjrRgBDciOqN85KBPV0uclKa6e7xL7tqsZ-mK0)
+
+#### Sequence Diagram
+The interaction between the frontend, Nginx (acting as a proxy), and the backend (Spring Cloud Gateway), where Nginx forwards requests and injects the appropriate CORS headers into the responses to authorize frontend access.
+![](https://i.ibb.co/4ZwyL3J/Capture-d-cran-2024-05-27-031842.png)
 
 ## Project Architecture
 #### First Version
